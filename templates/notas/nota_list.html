@@ -1,0 +1,18 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Notas de Observação</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <h1>Lista de Notas de Observação</h1>
+    <ul>
+        {% for nota in object_list %}
+            <li><a href="{% url 'nota_detail' nota.id %}">{{ nota.data_hora }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'nota_create' %}"class="button">Adicionar Nota</a>
+    <a href="{% url 'index'%}" class="button">Voltar para página inicial</a>
+</body>
+</html>

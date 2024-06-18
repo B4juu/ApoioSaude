@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Paciente</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            
+            {% if object.foto_perfil %}
+                <img src="{{ object.foto_perfil.url }}" alt="Foto de perfil de {{ object.nome }}" style="height: 11rem; margin: 0 auto 20px auto; display: block; border-radius: 10px;" >
+            {% else %}
+                <p>Sem foto de perfil.</p>
+            {% endif %}
+            <h1>{{ object.nome }}</h1>
+        </div>
+        <div class="info">
+            <p>Idade: {{ object.calcular_idade }}</p>
+            <p>Data de Nascimento: {{object.data_nascimento}}</p>
+            <p>Tipo Sanguíneo: {{ object.tipo_sanguineo }}</p>
+            <p>Doença(s): {{ object.doenca }}</p>
+            <p>Outros Dados: {{ object.outros_dados }}</p>
+        </div>
+        <div class="actions">
+            <a href="{% url 'paciente_update' object.id %}" class="button">Editar</a>
+            <a href="{% url 'paciente_delete' object.id %}" class="button">Deletar</a>
+            <a href="{% url 'paciente_list' %}" class="button">Voltar à Lista</a>
+        </div>
+    </div>
+</body>
+</html>

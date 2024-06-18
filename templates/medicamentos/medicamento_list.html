@@ -1,0 +1,18 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Medicamentos</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <h1>Lista de Medicamentos</h1>
+    <ul>
+        {% for medicamento in object_list %}
+            <li><a href="{% url 'medicamento_detail' medicamento.id %}">{{ medicamento.nome }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'medicamento_create' %}"class="button">Adicionar Medicamento</a>
+    <a href="{% url 'index'%}" class="button">Voltar para página inicial</a>
+</body>
+</html>

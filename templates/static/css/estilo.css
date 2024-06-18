@@ -1,0 +1,34 @@
+#home {
+	background: #ffc107;
+	color: white;
+}
+
+.caixa {
+	padding: 60px 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+footer p a {
+	margin: 5px 15px;
+}
+
+.nav {
+    background-color: #333; /* Cor de fundo */
+    overflow: hidden; /* Para lidar com os itens de navegação que transbordam */
+}
+
+/* Estilos para os links na barra de navegação */
+.nav a {
+    float: left; /* Alinha os itens de navegação lado a lado */
+    display: block; /* Torna os links em blocos para que ocupem toda a largura disponível */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding: 14px 16px; /* Espaçamento interno */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+/* Estilos para os links na barra de navegação quando hover */
+.nav a:hover {
+    background-color: #ddd; /* Cor de fundo quando o mouse está sobre */
+    color: black; /* Cor do texto quando o mouse está sobre */
+}

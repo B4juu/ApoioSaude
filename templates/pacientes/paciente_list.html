@@ -1,0 +1,21 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Pacientes</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <ul>
+        {% for paciente in object_list %}
+            <li><a href="{% url 'paciente_detail' paciente.id %}">
+                {{ paciente.nome }} 
+                {{paciente.data_nascimento|date:"d M Y"}}
+            </a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'paciente_create' %}"class="button">Adicionar Paciente</a>
+    <a href="{% url 'index'%}" class="button">Voltar para página inicial</a>
+</body>
+</html>

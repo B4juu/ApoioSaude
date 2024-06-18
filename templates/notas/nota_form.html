@@ -1,0 +1,19 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if object %}Editar Nota de Observação{% else %}Adicionar Nota de Observação{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{% if object %}Editar Nota de Observação{% else %}Adicionar Nota de Observação{% endif %}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar</button>
+        </form>
+        <a href="{% url 'nota_list' %}">Voltar à Lista</a>
+    </div>
+</body>
+</html>
